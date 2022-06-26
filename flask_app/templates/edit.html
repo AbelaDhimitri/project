@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center col-12 ">
+        <h1 class="text-center">Edit the office </h1>
+        <div class="d-flex col-4 justify-content-around">
+            <a href="/dashboard" class="btn btn-primary">TV Shows</a>
+            <a href="/logout" class="btn btn-info" >Logout</a>
+        </div>
+    </nav>
+    <form action="/create/recipe" method="post" class="col-11 p-4 bg-white text-dark mx-auto">
+        {% with messages = get_flashed_messages(category_filter=["recipe"]) %}
+            {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <div class="d-flex justify-content-between col-9">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="name" >Title:</label>
+                    <input type="text" name="name" class="form-control" placeholder="The Office">
+                </div>
+                <div class="form-group">
+                    <label for="description">Network:</label>
+                    <input type="text" name="description" class="form-control" placeholder="NBC">
+                </div>
+                <div class="form-group">
+                    <label for="date_made">Release Date:</label>
+                    <input type="date" name="date_made" class="form-control" placeholder="03/24/2005">
+                </div>
+                <div class="form-group">
+                    <label for="instructions">Description:</label>
+                    <textarea name="instructions" cols="30" rows="5" class="form-control" placeholder="A comedy documentary about an ordinary paper company"></textarea>
+                </div>
+                <br>
+                <a href="/dashboard" class="btn btn-primary"> Update </a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

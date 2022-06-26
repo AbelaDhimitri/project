@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center col-12 ">
+        <h1 class="text-center">Welcome {{user.first_name}}!!</h1>
+        <div class="d-flex col-4 justify-content-around">
+            <a href="/logout" class="btn btn-info" >Logout</a>
+        </div>
+    </nav>
+    <div class="col-8 mx-auto">
+        <h1> All TV Shows </h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>NameTitles</th>
+                    <th>Network </th>
+                    <th>Reloated Data</th>
+                    <th> Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Stranger Things</td> 
+                    <td>Netflix</td> 
+                    <td>July 15 2016 </td> 
+                    <td><a href="/show"> show</a> | <a href="" onclick ="add1()"> like </a></td> 
+                </tr>
+                <tr>
+                    <td>Brookly Nine- Nine</td> 
+                    <td>NBC</td> 
+                    <td>September 17 2013 </td> 
+                    <td><a href="/show"> show</a> | <a href="" onclick ="add1()"> like</a></td> 
+                </tr>
+                <tr>
+                    <td>Game of Thrones</td> 
+                    <td>HBO</td> 
+                    <td>April 17 2011 </td> 
+                    <td><a href="/show"> show</a> | <a href="" onclick ="add1()"> like</a></td> 
+                </tr>
+                <tr>
+                    <td>The Office</td> 
+                    <td>NBC</td> 
+                    <td>March 24 2005 </td> 
+                    <td><a href="/show"> show</a> | <a href="/edit/"> edit</a> | <a href="">delete</a></td> 
+                </tr>
+                <tr>
+                    <td>Park and Recreation </td> 
+                    <td>NBC</td> 
+                    <td>April 9 2004 </td> 
+                    <td><a href="/show"> show</a> | <a href="" onclick ="add1()"> like</a></td> 
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+    
+    <footer>
+        <nav class="d-flex justify-content-between align-items-center col-12 ">
+            <h1 class="text-center"></h1>
+            <div class="d-flex col-4 justify-content-around">
+            <a href="/new" class="btn btn-info">Add a New Show</a>
+         </footer>
+    <script src ="flask_app\templates\like.js"> </script>
+</body>
+</html>
+
